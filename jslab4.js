@@ -32,10 +32,10 @@ function displayStudents() {
 
     students.forEach(student => {
         const studentDiv = document.createElement('div');
-        studentDiv.innerHTML = `<p>ID: ${student.id}</p>
+        studentDiv.innerHTML = `<p>Mã: ${student.id}</p>
                                 <p>Tên: ${student.name}</p>
-                                <p>Tuổi: ${student.age}</p>
-                                <p>Điểm: ${student.grade}</p>`;
+                                <p>Năm Sản Xuất: ${student.age}</p>
+                                <p>Chất Lượng %: ${student.grade}</p>`;
         studentList.appendChild(studentDiv);
     });
 }
