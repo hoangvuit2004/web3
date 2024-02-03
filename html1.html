@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Webpage</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        .tab-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
+
+        .tab {
+            cursor: pointer;
+            padding: 15px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #4CAF50;
+            border-radius: 0 0 5px 5px;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .image {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            width: 200px;
+            height: 150px;
+        }
+
+        .download-button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .image-title {
+            text-align: center;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="tab-container">
+    <button class="tab" onclick="openTab('Ex1')">Design</button>
+</div>
+
+<div id="Ex1" class="tab-content">
+    <h2>Thiết kế</h2>
+    <button class="tab" onclick="openNestedTab('Design1')">Design</button>
+   
+    <div id="Design1" class="tab-content">
+        <h3>Content for Design</h3>
+        <div class="image-container">
+            <div>
+                <img src="imgs/Ảnh màn hình 2024-02-03 lúc 19.50.09.png" alt="Image 1" class="image">
+                <p class="image-title">Figma</p>
+                <a href="imgs/Ảnh màn hình 2024-02-03 lúc 19.50.09.png" download="Image1.jpg"><button class="download-button">Download Image 1</button></a>
+            </div>
+            <div>
+                <img src="imgs/IMG_8403.png" alt="Image 2" class="image">
+                <p class="image-title">Thiết kế giấy</p>
+                <a href="imgs/IMG_8403.png" download="Image2.jpg"><button class="download-button">Download Image 2</button></a>
+            </div>
+        </div>
+    </div>
+    <div id="Imp1" class="tab-content">
+        <h3>Content for Imp</h3>
+        <p>Trong menu Labs, tạo 1 menu Lab6 (file lab6.html)  sau đó tạo 2 tab Ex1, Ex2
+            Ex1: Thiết kế một trang Web đơn giản sử dụng mẫu F-pattern ==> chuyển sang html (ex1.html)
+            Ex2: Thiết kế một trang Web sử dụng mẫu Z-pattern ==> chuyển sang html (ex2.html)
+            Với cả Ex1, Ex2: Tạo 2 tab Design và Implementation: 
+                         + Design: chụp lại hình ảnh để có cái nhìn tổng quan về file thiết kế (thiết kế trên giấy và Figma), có nút Download để download file thiết kế về nếu muốn
+                         + Implementation: nội dung phần hiện thực trên html.</p>
+    </div>
+</div>
+
+
+
+<script>
+    function openTab(tabName) {
+        var i, tabContent;
+        tabContent = document.getElementsByClassName("tab-content");
+        for (i = 0; i < tabContent.length; i++) {
+            tabContent[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+
+    function openNestedTab(tabName) {
+        var i, nestedTabContent;
+        nestedTabContent = document.getElementById(tabName).getElementsByClassName("tab-content");
+        for (i = 0; i < nestedTabContent.length; i++) {
+            nestedTabContent[i].style.display = "none";
+        }
+        document.getElementById(tabName).style.display = "block";
+    }
+</script>
+
+</body>
+</html>
